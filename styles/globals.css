@@ -92,3 +92,47 @@ body {
     @apply bg-background text-foreground;
   }
 }
+
+/* Simple Carousel */
+.simple-carousel {
+  display: flex;
+  overflow-x: auto;
+  scroll-behavior: smooth;
+  -webkit-overflow-scrolling: touch;
+  height: 100%;
+  padding: 8px;
+  gap: 16px;
+  width: 100%;
+  position: relative;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+.simple-carousel::after {
+  content: "";
+  flex: 0 0 1px;
+}
+
+.simple-carousel::-webkit-scrollbar {
+  display: none;
+}
+
+.simple-carousel-item {
+  flex-shrink: 0;
+  width: 90%;
+  height: 100%;
+  padding: 0 8px;
+  box-sizing: border-box;
+}
+
+@media (min-width: 768px) {
+  .simple-carousel-item {
+    width: 45%;
+  }
+}
+
+@media (min-width: 1024px) {
+  .simple-carousel-item {
+    width: 30%;
+  }
+}

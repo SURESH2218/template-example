@@ -1,100 +1,56 @@
-"use client";
-import { Card, CardContent, CardHeader } from "@/components/ui/card";
+import { Card, CardContent } from "@/components/ui/card";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { Button } from "@/components/ui/button";
-import { Badge } from "@/components/ui/badge";
-import Link from "next/link";
-import {
-  Users,
-  BookOpen,
-  Award,
-  Star,
-  MessageCircle,
-  Edit,
-} from "lucide-react";
+import { Users, BookOpen, Award, Star, MessageCircle } from "lucide-react";
 
-export default function UserProfile() {
+export function UserProfile() {
   return (
-    <Card className="border-violet-100 dark:border-violet-800 overflow-hidden h-full">
-      <CardHeader className="p-0">
-        <div className="h-16 bg-gradient-to-r from-violet-500 to-purple-600 relative">
-          <Button
-            variant="ghost"
-            size="icon"
-            className="absolute top-2 right-2 bg-white/20 hover:bg-white/30 text-white rounded-full h-6 w-6"
-          >
-            <Edit className="h-3 w-3" />
-          </Button>
-        </div>
-      </CardHeader>
-      <CardContent className="p-4 pt-0 relative">
-        <div className="flex flex-col items-center -mt-8">
-          <Avatar className="h-16 w-16 border-4 border-white dark:border-slate-900 shadow-md">
-            <AvatarImage src="/placeholder.svg?height=80&width=80&text=SC" />
-            <AvatarFallback className="bg-violet-100 text-violet-700 text-lg">
-              SC
-            </AvatarFallback>
-          </Avatar>
-          <h3 className="font-semibold text-base mt-1">Dr. Sarah Chen</h3>
-          <p className="text-xs text-muted-foreground">
-            Molecular Biologist at Stanford University
-          </p>
-
-          <div className="flex gap-1 mt-2">
-            <Badge className="bg-violet-100 text-violet-700 hover:bg-violet-200 dark:bg-violet-900/30 dark:text-violet-300 text-xs py-0">
-              <Star className="h-2.5 w-2.5 mr-1 fill-amber-400 stroke-amber-400" />
-              Top Contributor
-            </Badge>
-            <Badge
-              variant="outline"
-              className="border-violet-200 dark:border-violet-800 text-xs py-0"
-            >
-              <Award className="h-2.5 w-2.5 mr-1" />
-              PhD
-            </Badge>
-          </div>
-
-          <div className="grid grid-cols-3 gap-2 w-full mt-3 text-center">
-            <div>
-              <p className="font-semibold text-sm">42</p>
-              <p className="text-xs text-muted-foreground">Publications</p>
-            </div>
-            <div>
-              <p className="font-semibold text-sm">1.2k</p>
-              <p className="text-xs text-muted-foreground">Connections</p>
-            </div>
-            <div>
-              <p className="font-semibold text-sm">3.8k</p>
-              <p className="text-xs text-muted-foreground">Citations</p>
+    <Card className="frosted-card overflow-hidden animate-blur-in border-0">
+      <div className="relative p-6">
+        <div className="absolute inset-0 gradient-purple opacity-10 rounded-lg"></div>
+        
+        <div className="flex flex-col items-center relative">
+          <div className="flex items-center mb-5 w-full">
+            <Avatar className="h-16 w-16 border-2 border-white shadow-lg animate-float">
+              <AvatarImage src="/placeholder.svg?height=80&width=80&text=SC" alt="Sarah Chen" />
+              <AvatarFallback className="bg-purple-100 text-purple-700 text-lg">
+                SC
+              </AvatarFallback>
+            </Avatar>
+            <div className="ml-4">
+              <h3 className="font-semibold text-lg animate-fade-in">Dr. Sarah Chen</h3>
+              <p className="text-xs text-muted-foreground animate-slide-in" style={{ animationDelay: "0.1s" }}>
+                Molecular Biologist
+              </p>
+              <div className="flex items-center mt-1 animate-slide-in" style={{ animationDelay: "0.2s" }}>
+                <Star className="h-3 w-3 mr-1 fill-amber-400 stroke-amber-400" />
+                <span className="text-xs font-medium text-purple-700 dark:text-purple-300">Top Contributor</span>
+                <span className="mx-2 text-slate-300">•</span>
+                <Award className="h-3 w-3 mr-1 text-purple-600" />
+                <span className="text-xs font-medium">PhD</span>
+              </div>
             </div>
           </div>
 
-          <div className="flex gap-2 mt-3 w-full">
-            <Button
-              className="flex-1 bg-violet-600 hover:bg-violet-700 h-7 text-xs"
-              size="sm"
-              asChild
-            >
-              <Link href="/profile">
-                <Users className="h-3 w-3 mr-1" />
-                View Profile
-              </Link>
-            </Button>
-            <Button
-              variant="outline"
-              className="flex-1 border-violet-200 hover:bg-violet-50 h-7 text-xs"
-              size="sm"
-            >
-              <MessageCircle className="h-3 w-3 mr-1" />
-              Message
-            </Button>
-          </div>
+          <div className="w-full bg-white/50 dark:bg-black/10 backdrop-blur-md rounded-xl p-4 shadow-sm animate-slide-up" style={{ animationDelay: "0.3s" }}>
+            <div className="grid grid-cols-3 gap-4 w-full text-center mb-4">
+              <div className="hover:bg-white/50 dark:hover:bg-white/10 p-2 rounded-lg transition-all duration-300 transform hover:scale-105">
+                <p className="font-semibold text-lg text-purple-700 dark:text-purple-300">42</p>
+                <p className="text-[11px] text-muted-foreground">Publications</p>
+              </div>
+              <div className="hover:bg-white/50 dark:hover:bg-white/10 p-2 rounded-lg transition-all duration-300 transform hover:scale-105">
+                <p className="font-semibold text-lg text-purple-700 dark:text-purple-300">1.2k</p>
+                <p className="text-[11px] text-muted-foreground">Connections</p>
+              </div>
+              <div className="hover:bg-white/50 dark:hover:bg-white/10 p-2 rounded-lg transition-all duration-300 transform hover:scale-105">
+                <p className="font-semibold text-lg text-purple-700 dark:text-purple-300">3.8k</p>
+                <p className="text-[11px] text-muted-foreground">Citations</p>
+              </div>
+            </div>
 
-          <div className="w-full mt-3 pt-2 border-t border-violet-100 dark:border-violet-800/30">
-            <h4 className="text-xs font-medium mb-1">Recent Activity</h4>
-            <div className="space-y-1.5">
-              <div className="text-[10px] text-muted-foreground flex items-start gap-1.5">
-                <BookOpen className="h-2.5 w-2.5 mt-0.5 text-violet-500 flex-shrink-0" />
+            <div className="space-y-2.5 mb-4">
+              <div className="text-[11px] text-muted-foreground flex items-start gap-2 p-2 hover:bg-white/50 dark:hover:bg-white/10 rounded-lg transition-colors">
+                <BookOpen className="h-3.5 w-3.5 mt-0.5 text-purple-500 flex-shrink-0" />
                 <span>
                   Published a paper in{" "}
                   <span className="font-medium text-foreground">
@@ -102,8 +58,8 @@ export default function UserProfile() {
                   </span>
                 </span>
               </div>
-              <div className="text-[10px] text-muted-foreground flex items-start gap-1.5">
-                <Users className="h-2.5 w-2.5 mt-0.5 text-violet-500 flex-shrink-0" />
+              <div className="text-[11px] text-muted-foreground flex items-start gap-2 p-2 hover:bg-white/50 dark:hover:bg-white/10 rounded-lg transition-colors">
+                <Users className="h-3.5 w-3.5 mt-0.5 text-purple-500 flex-shrink-0" />
                 <span>
                   Connected with{" "}
                   <span className="font-medium text-foreground">
@@ -112,9 +68,27 @@ export default function UserProfile() {
                 </span>
               </div>
             </div>
+
+            <div className="flex gap-2 w-full">
+              <Button
+                className="flex-1 bg-purple-600 hover:bg-purple-700 h-8 text-xs transition-all duration-300"
+                size="sm"
+              >
+                <Users className="h-3 w-3 mr-1" />
+                View Profile
+              </Button>
+              <Button
+                variant="outline"
+                className="flex-1 border-purple-200 h-8 text-xs bg-white/50 hover:bg-white/80 dark:bg-black/10 dark:hover:bg-black/20 dark:border-purple-800 transition-all duration-300"
+                size="sm"
+              >
+                <MessageCircle className="h-3 w-3 mr-1" />
+                Message
+              </Button>
+            </div>
           </div>
         </div>
-      </CardContent>
+      </div>
     </Card>
   );
 }

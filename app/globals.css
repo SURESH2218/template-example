@@ -92,3 +92,103 @@ body {
     @apply bg-background text-foreground;
   }
 }
+
+/* Simple Carousel */
+.simple-carousel {
+  display: flex;
+  overflow-x: auto;
+  scroll-behavior: smooth;
+  -webkit-overflow-scrolling: touch;
+  height: 100%;
+  padding: 8px;
+  gap: 16px;
+  width: 100%;
+  position: relative;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+.simple-carousel::after {
+  content: "";
+  flex: 0 0 1px;
+}
+
+.simple-carousel::-webkit-scrollbar {
+  display: none;
+}
+
+.simple-carousel-item {
+  flex-shrink: 0;
+  width: 90%;
+  height: 100%;
+  padding: 0 8px;
+  box-sizing: border-box;
+}
+
+@media (min-width: 768px) {
+  .simple-carousel-item {
+    width: 45%;
+  }
+}
+
+@media (min-width: 1024px) {
+  .simple-carousel-item {
+    width: 30%;
+  }
+}
+
+
+
+/* Specific component styles */
+@layer components {
+  .post-card {
+    @apply bg-white dark:bg-gray-900 rounded-xl shadow-soft transition-shadow hover:shadow-elevated overflow-hidden;
+  }
+
+  .profile-avatar {
+    @apply rounded-full border-2 border-white dark:border-gray-800 shadow-soft;
+  }
+
+  .badge-pill {
+    @apply inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium;
+  }
+
+  .notification-dot {
+    @apply absolute top-0 right-0 w-2 h-2 bg-brand-500 rounded-full;
+  }
+
+  .tab-indicator {
+    @apply absolute bottom-0 h-0.5 bg-brand-500 transition-all duration-300;
+  }
+}
+
+/* Font imports */
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500&display=swap");
+
+/* Add drawer animation */
+@keyframes drawer-slide-in {
+  from {
+    transform: translateX(100%);
+  }
+  to {
+    transform: translateX(0);
+  }
+}
+
+@keyframes drawer-slide-out {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(100%);
+  }
+}
+
+.drawer-enter {
+  animation: drawer-slide-in 300ms ease-out forwards;
+}
+
+.drawer-exit {
+  animation: drawer-slide-out 300ms ease-in forwards;
+}

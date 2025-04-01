@@ -4,9 +4,10 @@ import { useState, useEffect } from "react";
 import Header from "@/components/layout/header";
 import ScientificHub from "@/components/home/scientific-hub";
 import ContentTabs from "@/components/home/content-tabs";
-import UserProfile from "@/components/home/user-profile";
+import { UserProfile } from "@/components/home/user-profile";
 import { Loader2, Beaker } from "lucide-react";
 import { motion } from "framer-motion";
+import Index from "../Index";
 
 export default function HomePage() {
   const [isLoading, setIsLoading] = useState(true);
@@ -48,24 +49,26 @@ export default function HomePage() {
   return (
     <div className="min-h-screen bg-gradient-to-br from-violet-50 to-slate-100 dark:from-slate-900 dark:to-violet-950">
       <Header />
-      <main className="container px-4 py-6">
+      <main className="px-4 py-6">
         {/* Scientific Hub Section */}
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 mb-6">
           {/* User Profile Section - Takes 4 columns on large screens */}
-          <div className="lg:col-span-4">
+          <div className="lg:col-span-3">
             <UserProfile />
           </div>
 
           {/* Scientific Hub - Takes 8 columns on large screens */}
-          <div className="lg:col-span-8">
+          <div className="lg:col-span-9">
             <ScientificHub />
           </div>
         </div>
 
         {/* Content Tabs Section */}
-        <div className="mt-6">
-          <ContentTabs />
+        <div className="lg:col-span-12">
+          <Index />
         </div>
+
+
       </main>
     </div>
   );

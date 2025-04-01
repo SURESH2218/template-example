@@ -89,8 +89,8 @@ export default function MainContent() {
         {/* Replace ScrollArea with responsive grid */}
         <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-3">
           {[1, 2, 3].map((item) => (
-            <motion.div
-              key={item}
+              <motion.div
+                key={item}
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{
@@ -109,7 +109,7 @@ export default function MainContent() {
             >
               <Card className="h-full border-none shadow-sm overflow-hidden bg-white dark:bg-slate-900">
                 <CardHeader className="p-3 pb-1">
-                  <div className="flex items-center gap-2">
+                    <div className="flex items-center gap-2">
                     <Avatar className="h-6 w-6 border border-violet-200">
                       <AvatarImage
                         src={`/placeholder.svg?height=24&width=24&text=S${item}`}
@@ -117,15 +117,15 @@ export default function MainContent() {
                       <AvatarFallback className="bg-violet-100 text-violet-700 text-xs">
                         S{item}
                       </AvatarFallback>
-                    </Avatar>
-                    <div>
+                      </Avatar>
+                      <div>
                       <p className="text-xs font-medium">Dr. Sarah Chen</p>
                       <p className="text-xs text-muted-foreground">
                         Stanford University
                       </p>
                     </div>
-                  </div>
-                </CardHeader>
+                    </div>
+                  </CardHeader>
                 <CardContent className="p-3 pt-1">
                   <p className="text-xs font-medium mb-2">
                     New findings on protein folding mechanisms
@@ -135,22 +135,22 @@ export default function MainContent() {
                       variant="outline"
                       className="text-[10px] px-1 py-0 h-4 bg-violet-50 text-violet-700 border-violet-200"
                     >
-                      Protein Research
-                    </Badge>
+                        Protein Research
+                      </Badge>
                     <Badge
                       variant="outline"
                       className="text-[10px] px-1 py-0 h-4 bg-violet-50 text-violet-700 border-violet-200"
                     >
-                      Neuroscience
-                    </Badge>
-                  </div>
+                        Neuroscience
+                      </Badge>
+                    </div>
                   <p className="text-[10px] text-muted-foreground">
                     Published in Nature • 3 days ago
                   </p>
-                </CardContent>
-              </Card>
-            </motion.div>
-          ))}
+                  </CardContent>
+                </Card>
+              </motion.div>
+            ))}
         </div>
       </div>
 
@@ -177,7 +177,7 @@ export default function MainContent() {
                       <AvatarFallback className="bg-gradient-to-br from-violet-500 to-indigo-600 text-white">
                         JP
                       </AvatarFallback>
-                    </Avatar>
+                  </Avatar>
                     <div className="absolute -bottom-1 -right-1 bg-green-500 h-3 w-3 rounded-full border-2 border-white dark:border-slate-800"></div>
                   </div>
                   <div className="flex-1">
@@ -207,8 +207,8 @@ export default function MainContent() {
                           size="icon"
                           className="h-8 w-8 rounded-full hover:bg-violet-50 dark:hover:bg-violet-900/20"
                         >
-                          <MoreHorizontal className="h-4 w-4" />
-                        </Button>
+                    <MoreHorizontal className="h-4 w-4" />
+                  </Button>
                       </div>
                     </div>
                   </div>
@@ -216,96 +216,96 @@ export default function MainContent() {
               </CardHeader>
             </div>
             <CardContent className="p-4 pt-2">
-              <p className="mb-4">
+                <p className="mb-4">
                 Just published our findings on novel drug delivery mechanisms
                 using nanomaterial carriers. We've observed a 43% increase in
                 targeted delivery efficiency compared to conventional methods.
                 Would love to hear thoughts from colleagues working in similar
                 areas!
-              </p>
-              <div className="flex gap-2 flex-wrap">
-                <Badge
-                  variant="outline"
-                  className="bg-violet-50 text-violet-700 border-violet-200 hover:bg-violet-100"
-                >
-                  Drug Delivery
-                </Badge>
-                <Badge
-                  variant="outline"
-                  className="bg-violet-50 text-violet-700 border-violet-200 hover:bg-violet-100"
-                >
-                  Nanomaterials
-                </Badge>
-                <Badge
-                  variant="outline"
-                  className="bg-violet-50 text-violet-700 border-violet-200 hover:bg-violet-100"
-                >
-                  Pharmaceuticals
-                </Badge>
-              </div>
-            </CardContent>
+                </p>
+                <div className="flex gap-2 flex-wrap">
+                  <Badge
+                    variant="outline"
+                    className="bg-violet-50 text-violet-700 border-violet-200 hover:bg-violet-100"
+                  >
+                    Drug Delivery
+                  </Badge>
+                  <Badge
+                    variant="outline"
+                    className="bg-violet-50 text-violet-700 border-violet-200 hover:bg-violet-100"
+                  >
+                    Nanomaterials
+                  </Badge>
+                  <Badge
+                    variant="outline"
+                    className="bg-violet-50 text-violet-700 border-violet-200 hover:bg-violet-100"
+                  >
+                    Pharmaceuticals
+                  </Badge>
+                </div>
+              </CardContent>
             <CardFooter className="p-4 pt-0 flex justify-between">
-              <div className="flex gap-4">
-                <PostReactions
-                  postId={1}
-                  isActive={activePost === 1}
-                  isAnimating={likeAnimations[1]}
-                  count={activePost === 1 ? 43 : 42}
-                  onToggle={() => toggleLike(1)}
-                />
-                <Button
-                  variant="ghost"
-                  size="sm"
-                  className="flex items-center gap-1"
-                  onClick={() => toggleComments(1)}
-                >
-                  <MessageCircle className="h-5 w-5" />
-                  <span>18</span>
-                </Button>
-                <Button
-                  variant="ghost"
-                  size="sm"
-                  className="flex items-center gap-1"
-                >
-                  <Share2 className="h-5 w-5" />
-                  <span>Share</span>
-                </Button>
+                <div className="flex gap-4">
+                  <PostReactions
+                    postId={1}
+                    isActive={activePost === 1}
+                    isAnimating={likeAnimations[1]}
+                    count={activePost === 1 ? 43 : 42}
+                    onToggle={() => toggleLike(1)}
+                  />
+                  <Button
+                    variant="ghost"
+                    size="sm"
+                    className="flex items-center gap-1"
+                    onClick={() => toggleComments(1)}
+                  >
+                    <MessageCircle className="h-5 w-5" />
+                    <span>18</span>
+                  </Button>
                 <Button
                   variant="ghost"
                   size="sm"
                   className="flex items-center gap-1"
                 >
-                  <Bookmark className="h-5 w-5" />
+                    <Share2 className="h-5 w-5" />
+                    <span>Share</span>
+                  </Button>
+                <Button
+                  variant="ghost"
+                  size="sm"
+                  className="flex items-center gap-1"
+                >
+                    <Bookmark className="h-5 w-5" />
+                  </Button>
+                </div>
+                <Button
+                  variant="outline"
+                  size="sm"
+                  className="border-violet-200 hover:bg-violet-50 hover:text-violet-700"
+                >
+                  Read Paper
                 </Button>
-              </div>
-              <Button
-                variant="outline"
-                size="sm"
-                className="border-violet-200 hover:bg-violet-50 hover:text-violet-700"
-              >
-                Read Paper
-              </Button>
-            </CardFooter>
+              </CardFooter>
 
-            {/* Comments Section */}
-            <AnimatePresence>
-              {expandedComments.includes(1) && (
-                <motion.div
-                  initial={{ opacity: 0, height: 0 }}
-                  animate={{ opacity: 1, height: "auto" }}
-                  exit={{ opacity: 0, height: 0 }}
-                  transition={{ duration: 0.3 }}
+              {/* Comments Section */}
+              <AnimatePresence>
+                {expandedComments.includes(1) && (
+                  <motion.div
+                    initial={{ opacity: 0, height: 0 }}
+                    animate={{ opacity: 1, height: "auto" }}
+                    exit={{ opacity: 0, height: 0 }}
+                    transition={{ duration: 0.3 }}
                   className="bg-violet-50/50 dark:bg-violet-900/10 overflow-hidden"
-                >
-                  <div className="p-4 space-y-4">
-                    <div className="flex items-start gap-3">
-                      <Avatar className="h-8 w-8">
-                        <AvatarImage src="/placeholder.svg?height=32&width=32&text=EC" />
-                        <AvatarFallback>EC</AvatarFallback>
-                      </Avatar>
-                      <div className="flex-1 bg-white dark:bg-slate-800 rounded-lg p-3 shadow-sm">
-                        <div className="flex justify-between items-start">
-                          <p className="text-sm font-medium">Dr. Emily Chen</p>
+                  >
+                    <div className="p-4 space-y-4">
+                      <div className="flex items-start gap-3">
+                        <Avatar className="h-8 w-8">
+                          <AvatarImage src="/placeholder.svg?height=32&width=32&text=EC" />
+                          <AvatarFallback>EC</AvatarFallback>
+                        </Avatar>
+                        <div className="flex-1 bg-white dark:bg-slate-800 rounded-lg p-3 shadow-sm">
+                          <div className="flex justify-between items-start">
+                            <p className="text-sm font-medium">Dr. Emily Chen</p>
                           <p className="text-xs text-muted-foreground">
                             1h ago
                           </p>
@@ -315,34 +315,34 @@ export default function MainContent() {
                           lipid-based nanocarriers as well? We've seen promising
                           results in our lab with similar targeted delivery
                           approaches.
-                        </p>
-                        <div className="flex items-center gap-2 mt-2">
+                          </p>
+                          <div className="flex items-center gap-2 mt-2">
                           <Button
                             variant="ghost"
                             size="sm"
                             className="h-7 px-2 text-xs"
                           >
-                            <ThumbsUp className="h-3 w-3 mr-1" /> 7
-                          </Button>
+                              <ThumbsUp className="h-3 w-3 mr-1" /> 7
+                            </Button>
                           <Button
                             variant="ghost"
                             size="sm"
                             className="h-7 px-2 text-xs"
                           >
-                            Reply
-                          </Button>
+                              Reply
+                            </Button>
+                          </div>
                         </div>
                       </div>
-                    </div>
 
-                    <div className="flex items-start gap-3">
-                      <Avatar className="h-8 w-8">
-                        <AvatarImage src="/placeholder.svg?height=32&width=32&text=RK" />
-                        <AvatarFallback>RK</AvatarFallback>
-                      </Avatar>
-                      <div className="flex-1 bg-white dark:bg-slate-800 rounded-lg p-3 shadow-sm">
-                        <div className="flex justify-between items-start">
-                          <p className="text-sm font-medium">Dr. Robert Kim</p>
+                      <div className="flex items-start gap-3">
+                        <Avatar className="h-8 w-8">
+                          <AvatarImage src="/placeholder.svg?height=32&width=32&text=RK" />
+                          <AvatarFallback>RK</AvatarFallback>
+                        </Avatar>
+                        <div className="flex-1 bg-white dark:bg-slate-800 rounded-lg p-3 shadow-sm">
+                          <div className="flex justify-between items-start">
+                            <p className="text-sm font-medium">Dr. Robert Kim</p>
                           <p className="text-xs text-muted-foreground">
                             45m ago
                           </p>
@@ -351,60 +351,60 @@ export default function MainContent() {
                           Great work! What was your control methodology? I'd be
                           interested in replicating some of these findings in
                           our lab.
-                        </p>
-                        <div className="flex items-center gap-2 mt-2">
+                          </p>
+                          <div className="flex items-center gap-2 mt-2">
                           <Button
                             variant="ghost"
                             size="sm"
                             className="h-7 px-2 text-xs"
                           >
-                            <ThumbsUp className="h-3 w-3 mr-1" /> 3
-                          </Button>
+                              <ThumbsUp className="h-3 w-3 mr-1" /> 3
+                            </Button>
                           <Button
                             variant="ghost"
                             size="sm"
                             className="h-7 px-2 text-xs"
                           >
-                            Reply
-                          </Button>
+                              Reply
+                            </Button>
+                          </div>
                         </div>
                       </div>
-                    </div>
 
                     <form
                       onSubmit={(e) => handleCommentSubmit(1, e)}
                       className="flex items-start gap-3 pt-2"
                     >
-                      <Avatar className="h-8 w-8">
-                        <AvatarImage src="/placeholder.svg?height=32&width=32&text=SC" />
-                        <AvatarFallback>SC</AvatarFallback>
-                      </Avatar>
-                      <div className="flex-1 relative">
-                        <Input
-                          placeholder="Add a comment..."
-                          className="pr-10 bg-white dark:bg-slate-800 border-violet-200 dark:border-violet-800 focus-visible:ring-violet-500"
-                          value={newComments[1] || ""}
+                        <Avatar className="h-8 w-8">
+                          <AvatarImage src="/placeholder.svg?height=32&width=32&text=SC" />
+                          <AvatarFallback>SC</AvatarFallback>
+                        </Avatar>
+                        <div className="flex-1 relative">
+                          <Input
+                            placeholder="Add a comment..."
+                            className="pr-10 bg-white dark:bg-slate-800 border-violet-200 dark:border-violet-800 focus-visible:ring-violet-500"
+                            value={newComments[1] || ""}
                           onChange={(e) =>
                             setNewComments({
                               ...newComments,
                               1: e.target.value,
                             })
                           }
-                        />
-                        <Button
-                          type="submit"
-                          size="icon"
-                          className="h-8 w-8 absolute right-1 top-1 text-violet-600 hover:text-violet-700 hover:bg-violet-50"
-                          disabled={!newComments[1]?.trim()}
-                        >
-                          <Send className="h-4 w-4" />
-                        </Button>
-                      </div>
-                    </form>
-                  </div>
-                </motion.div>
-              )}
-            </AnimatePresence>
+                          />
+                          <Button
+                            type="submit"
+                            size="icon"
+                            className="h-8 w-8 absolute right-1 top-1 text-violet-600 hover:text-violet-700 hover:bg-violet-50"
+                            disabled={!newComments[1]?.trim()}
+                          >
+                            <Send className="h-4 w-4" />
+                          </Button>
+                        </div>
+                      </form>
+                    </div>
+                  </motion.div>
+                )}
+              </AnimatePresence>
           </Card>
         </motion.div>
 
@@ -427,7 +427,7 @@ export default function MainContent() {
                       <AvatarFallback className="bg-gradient-to-br from-amber-500 to-orange-600 text-white">
                         ML
                       </AvatarFallback>
-                    </Avatar>
+                  </Avatar>
                     <div className="absolute -bottom-1 -right-1 bg-green-500 h-3 w-3 rounded-full border-2 border-white dark:border-slate-800"></div>
                   </div>
                   <div className="flex-1">
@@ -451,15 +451,15 @@ export default function MainContent() {
                       <div className="flex items-center gap-2">
                         <Badge className="bg-gradient-to-r from-amber-500 to-orange-600 text-white border-none shadow-sm">
                           <Star className="h-3 w-3 mr-1 fill-white stroke-none" />
-                          Top Post
-                        </Badge>
+                      Top Post
+                    </Badge>
                         <Button
                           variant="ghost"
                           size="icon"
                           className="h-8 w-8 rounded-full hover:bg-amber-50 dark:hover:bg-amber-900/20"
                         >
-                          <MoreHorizontal className="h-4 w-4" />
-                        </Button>
+                      <MoreHorizontal className="h-4 w-4" />
+                    </Button>
                       </div>
                     </div>
                   </div>
@@ -467,100 +467,100 @@ export default function MainContent() {
               </CardHeader>
             </div>
             <CardContent className="p-4 pt-2">
-              <p className="mb-3">
+                <p className="mb-3">
                 Excited to share images from our latest crystallography analysis
                 of the compound XR-27. These structures reveal potential binding
                 sites for targeted therapy.
               </p>
               <div className="relative h-[300px] rounded-md overflow-hidden mb-3 shadow-inner border border-amber-100">
-                <Image
-                  src="/placeholder.svg?height=600&width=800"
-                  alt="Crystallography analysis"
-                  fill
+                  <Image
+                    src="/placeholder.svg?height=600&width=800"
+                    alt="Crystallography analysis"
+                    fill
                   className="object-cover"
-                />
-                <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/60 to-transparent p-3">
-                  <div className="flex items-center justify-between">
+                  />
+                  <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/60 to-transparent p-3">
+                    <div className="flex items-center justify-between">
                     <Badge className="bg-amber-600">High Resolution</Badge>
-                    <Button
-                      size="sm"
-                      variant="outline"
-                      className="bg-white/20 text-white border-white/40 hover:bg-white/30"
-                    >
-                      <Award className="h-4 w-4 mr-1" /> View in 3D
-                    </Button>
+                      <Button
+                        size="sm"
+                        variant="outline"
+                        className="bg-white/20 text-white border-white/40 hover:bg-white/30"
+                      >
+                        <Award className="h-4 w-4 mr-1" /> View in 3D
+                      </Button>
+                    </div>
                   </div>
+              </div>
+                <div className="flex gap-2 flex-wrap">
+                  <Badge
+                    variant="outline"
+                  className="bg-amber-50 text-amber-700 border-amber-200 hover:bg-amber-100"
+                  >
+                    Crystallography
+                  </Badge>
+                  <Badge
+                    variant="outline"
+                  className="bg-amber-50 text-amber-700 border-amber-200 hover:bg-amber-100"
+                  >
+                    Molecular Structure
+                  </Badge>
                 </div>
-              </div>
-              <div className="flex gap-2 flex-wrap">
-                <Badge
-                  variant="outline"
-                  className="bg-amber-50 text-amber-700 border-amber-200 hover:bg-amber-100"
-                >
-                  Crystallography
-                </Badge>
-                <Badge
-                  variant="outline"
-                  className="bg-amber-50 text-amber-700 border-amber-200 hover:bg-amber-100"
-                >
-                  Molecular Structure
-                </Badge>
-              </div>
-            </CardContent>
+              </CardContent>
             <CardFooter className="p-4 pt-0 flex justify-between">
-              <div className="flex gap-4">
-                <PostReactions
-                  postId={2}
-                  isActive={activePost === 2}
-                  isAnimating={likeAnimations[2]}
-                  count={activePost === 2 ? 77 : 76}
-                  onToggle={() => toggleLike(2)}
-                />
-                <Button
-                  variant="ghost"
-                  size="sm"
-                  className="flex items-center gap-1"
-                  onClick={() => toggleComments(2)}
-                >
-                  <MessageCircle className="h-5 w-5" />
-                  <span>24</span>
-                </Button>
-                <Button
-                  variant="ghost"
-                  size="sm"
-                  className="flex items-center gap-1"
-                >
-                  <Share2 className="h-5 w-5" />
-                  <span>Share</span>
-                </Button>
+                <div className="flex gap-4">
+                  <PostReactions
+                    postId={2}
+                    isActive={activePost === 2}
+                    isAnimating={likeAnimations[2]}
+                    count={activePost === 2 ? 77 : 76}
+                    onToggle={() => toggleLike(2)}
+                  />
+                  <Button
+                    variant="ghost"
+                    size="sm"
+                    className="flex items-center gap-1"
+                    onClick={() => toggleComments(2)}
+                  >
+                    <MessageCircle className="h-5 w-5" />
+                    <span>24</span>
+                  </Button>
                 <Button
                   variant="ghost"
                   size="sm"
                   className="flex items-center gap-1"
                 >
-                  <Bookmark className="h-5 w-5" />
-                </Button>
-              </div>
-              <Button
-                variant="outline"
-                size="sm"
+                    <Share2 className="h-5 w-5" />
+                    <span>Share</span>
+                  </Button>
+                <Button
+                  variant="ghost"
+                  size="sm"
+                  className="flex items-center gap-1"
+                >
+                    <Bookmark className="h-5 w-5" />
+                  </Button>
+                </div>
+                <Button
+                  variant="outline"
+                  size="sm"
                 className="border-amber-200 hover:bg-amber-50 hover:text-amber-700"
-              >
-                View Details
-              </Button>
-            </CardFooter>
-
-            {/* Comments Section */}
-            <AnimatePresence>
-              {expandedComments.includes(2) && (
-                <motion.div
-                  initial={{ opacity: 0, height: 0 }}
-                  animate={{ opacity: 1, height: "auto" }}
-                  exit={{ opacity: 0, height: 0 }}
-                  transition={{ duration: 0.3 }}
-                  className="bg-amber-50/50 dark:bg-amber-900/10 overflow-hidden"
                 >
-                  <div className="p-4 space-y-4">
+                  View Details
+                </Button>
+              </CardFooter>
+
+              {/* Comments Section */}
+              <AnimatePresence>
+                {expandedComments.includes(2) && (
+                  <motion.div
+                    initial={{ opacity: 0, height: 0 }}
+                    animate={{ opacity: 1, height: "auto" }}
+                    exit={{ opacity: 0, height: 0 }}
+                    transition={{ duration: 0.3 }}
+                  className="bg-amber-50/50 dark:bg-amber-900/10 overflow-hidden"
+                  >
+                    <div className="p-4 space-y-4">
                     <div className="flex items-start gap-3">
                       <Avatar className="h-8 w-8">
                         <AvatarImage src="/placeholder.svg?height=32&width=32&text=EC" />
@@ -664,10 +664,10 @@ export default function MainContent() {
                         </Button>
                       </div>
                     </form>
-                  </div>
-                </motion.div>
-              )}
-            </AnimatePresence>
+                    </div>
+                  </motion.div>
+                )}
+              </AnimatePresence>
           </Card>
         </motion.div>
       </div>
