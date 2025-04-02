@@ -236,7 +236,7 @@ export default function ScientificHub() {
         initial="hidden"
         animate="visible"
         variants={containerVariants}
-        className="flex justify-center mb-8 overflow-hidden"
+        className="flex justify-center overflow-hidden"
       >
         <div
           ref={containerRef}

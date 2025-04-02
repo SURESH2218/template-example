@@ -48,23 +48,23 @@ export default function HomePage() {
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-violet-50 to-slate-100 dark:from-slate-900 dark:to-violet-950">
-      <Header />
-      <main className="px-4 py-6">
+      {/* <Header /> */}
+      <main className="">
         {/* Scientific Hub Section */}
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 mb-6">
+        <div className="grid grid-cols-1 lg:grid-cols-12 pl-14 pt-5">
           {/* User Profile Section - Takes 4 columns on large screens */}
           <div className="lg:col-span-3">
             <UserProfile />
           </div>
 
           {/* Scientific Hub - Takes 8 columns on large screens */}
-          <div className="lg:col-span-9">
+          <div className="lg:col-span-9" >
             <ScientificHub />
           </div>
         </div>
 
         {/* Content Tabs Section */}
-        <div className="lg:col-span-12">
+        <div className="lg:col-span-12 px-9">
           <Index />
         </div>
 
